@@ -10,7 +10,7 @@ function RegisterForm() {
         passwordDto: ''
     }
 
-    const { register, handleSubmit, reset, formState: { errors } }
+    const { register, handleSubmit, reset }
         = useForm<UserRegistrationForm>({ defaultValues: initialValues });
 
     const { mutate, isSuccess } = useRegister()

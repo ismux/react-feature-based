@@ -1,7 +1,7 @@
-import { AxiosResponse } from "axios";
-import { HttpServiceResponse } from "../../types";
-import { IHttpClient } from "../http-core/iservice.core";
+import { type AxiosResponse } from "axios";
 import api from "../http-instance/axios.instance";
+import type { IHttpClient } from "../http-core/iservice.core";
+import type { HttpServiceResponse } from "../../types";
 
 export class AxiosHttpClient implements IHttpClient {
  

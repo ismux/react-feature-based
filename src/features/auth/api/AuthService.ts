@@ -88,7 +88,7 @@ export async function getUser() {
         const url = `${_urlApiBase}${_apiVersion}/Users`; 
          const api = HttpClientFactory.getService(HttpClientType.AXIOS)
 
-        const data = await api.get<ApiResponse<UserLogged>>(url) as ApiResponse;
+        const data = await api.get<ApiResponse<UserLogged>>(url) as ApiResponse<UserLogged>;
         
         if (data.ok) {
             return data.data;

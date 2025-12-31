@@ -1,8 +1,8 @@
 import { create } from 'zustand'
-import { createRecipesSlice, RecipesSliceType } from './recipeSlice'
-import { createFavoritesSlice, FavoritesSliceType } from './favoritesSlice'
-import { createNotificationSlice, NotificationSliceType } from './notificationSlice'
-import { createAISlice, AISliceType } from './aiSlice'
+import { createRecipesSlice, type RecipesSliceType } from './recipeSlice'
+import { createFavoritesSlice, type FavoritesSliceType } from './favoritesSlice'
+import { createNotificationSlice, type NotificationSliceType } from './notificationSlice'
+import { createAISlice, type AISliceType } from './aiSlice'
 import { devtools } from 'zustand/middleware'
 /*
 Cada Slice compone el Store global, se utiliza "create" para agregarlos

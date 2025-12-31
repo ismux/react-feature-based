@@ -11,6 +11,7 @@ export type FetchHeaders = {
 
 export type HttpMethod = "GET" | "POST" | "PUT" | "DELETE" | "PATCH" | "HEAD";
 
+
 export type HttpServiceResponse<T = unknown> =
   | ApiResponse<T>  // Respuesta estructurada de API
   | T               // Respuesta directa (datos sin wrapper)
@@ -20,3 +21,6 @@ export const HttpClientType = {
   FETCH: 'fetch',
   AXIOS: 'axios'
 } as const;
+
+export type HttpClientType =
+  typeof HttpClientType[keyof typeof HttpClientType];

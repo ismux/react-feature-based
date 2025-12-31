@@ -3,7 +3,7 @@ import { ToastContainer } from 'react-toastify'
 import NavBar from "../components/navbar/NavBar"
 import { Suspense } from "react"
 import Spinner from "../components/spinner/Spinner"
-import { useAuth } from "../features/auth/api/get-auth"
+import { useAuth } from "../features/auth/hooks/useAuth"
 
 function AppLayout() {
 

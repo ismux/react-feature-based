@@ -7,7 +7,7 @@ function LoginForm() {
         emailDto: '',
         passwordDto: '',
     }
-    const { register, handleSubmit, formState: { errors } } = useForm({ defaultValues: initialValues })
+    const { register, handleSubmit } = useForm({ defaultValues: initialValues })
     const { mutate } = useLogin()
     const handleLogin = (formData: UserLoginForm) => mutate(formData)
 

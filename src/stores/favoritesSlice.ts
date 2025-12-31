@@ -1,7 +1,7 @@
-import { StateCreator } from "zustand"
-import { Recipe } from "../pages/bebidas/models/recipes-schema"
-import { createNotificationSlice, NotificationSliceType } from "./notificationSlice"
-import { RecipesSliceType } from "./recipeSlice"
+import { type StateCreator } from "zustand"
+import { createNotificationSlice, type NotificationSliceType } from "./notificationSlice"
+import type { Recipe } from "../features/recipes/types/recipes-schema"
+import type { RecipesSliceType } from "./recipeSlice"
 
 export type FavoritesSliceType = {
     favorites: Recipe[],

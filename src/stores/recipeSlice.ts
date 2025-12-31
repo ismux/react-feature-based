@@ -1,7 +1,6 @@
-import { StateCreator } from "zustand"
-import { getCategories, getRecipeById, getRecipes } from "../pages/bebidas/services/RecipeService"
-import { Categories, Drink, Drinks, Recipe, SearchFilter } from "../pages/bebidas/models/recipes-schema"
-
+import { type  StateCreator } from "zustand"
+import type { Categories, Drink, Drinks, Recipe, SearchFilter } from "../features/recipes/types/recipes-schema"
+import { getCategories, getRecipeById, getRecipes } from "@/features/recipes/api/RecipeService"
 
 export type RecipesSliceType = {
     categories: Categories,
@@ -26,7 +25,7 @@ export const createRecipesSlice: StateCreator<RecipesSliceType> = (set) => ({
     fetchCategories: async () => {
        const categories = await getCategories()
        set({
-        categories 
+        categories
        })
     },
     searchRecipes: async (filters) => {

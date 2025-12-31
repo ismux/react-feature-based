@@ -1,7 +1,7 @@
 import { useForm } from "react-hook-form";
 import type { ForgotPasswordForm } from "../types/auth";
-import { useForgotPassword } from "../hooks/useforgotPassword";
 import ErrorMessage from "../../../components/error/ErrorMessage";
+import { useForgotPassword } from "../hooks/useForgotPassword";
 
 function ForgotForm() {
 

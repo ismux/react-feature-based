@@ -1,4 +1,4 @@
-import { TokenStorage } from "../../types";
+import type { TokenStorage } from "@/features/auth/types/user";
 
 export const getTokenFromStorage = (): TokenStorage => {
   return {

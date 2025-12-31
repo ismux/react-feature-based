@@ -1,6 +1,5 @@
-import { StateCreator } from "zustand"
-import AIService from "../pages/bebidas/services/AIService"
-
+import { type StateCreator } from "zustand"
+import AIService from "../features/recipes/api/AIService"
 
 export type AISliceType = {
     recipe: string,

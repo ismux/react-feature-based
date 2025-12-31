@@ -1,4 +1,4 @@
-import { FetchHeaders, HttpServiceResponse } from "../../types";
+import type { FetchHeaders, HttpServiceResponse } from "../../types";
 
 export interface IHttpClient {
     getCall<R>(url: string, withAuth: boolean, headers?: FetchHeaders): Promise<HttpServiceResponse<R>>;

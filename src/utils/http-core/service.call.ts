@@ -1,5 +1,5 @@
-import { FetchHeaders, HttpServiceResponse } from "../../types";
-import { IHttpClient } from "./iservice.core";
+import type { FetchHeaders, HttpServiceResponse } from "../../types";
+import type { IHttpClient } from "./iservice.core";
 
 export class RestService {
     constructor(private httpClient: IHttpClient) { }

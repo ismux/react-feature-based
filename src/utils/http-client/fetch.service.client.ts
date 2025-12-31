@@ -1,6 +1,7 @@
-import { refreshToken } from "../../services/authServices";
-import { FetchHeaders, HttpServiceResponse } from "../../types";
-import { IHttpClient } from "../http-core/iservice.core";
+
+import { refreshToken } from "../../features/auth/api/tokenService";
+import type { FetchHeaders, HttpServiceResponse } from "../../types";
+import type { IHttpClient } from "../http-core/iservice.core";
 import { getTokenFromStorage, setStorageToken } from "../token-storage/token.store";
 
 export class FetchHttpClient implements IHttpClient {

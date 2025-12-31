@@ -1,5 +1,5 @@
 import { HttpClientType } from "../../types";
-import { IHttpClient } from "../http-core/iservice.core";
+import type { IHttpClient } from "../http-core/iservice.core";
 import { FetchHttpClient } from "../http-client/fetch.service.client";
 import { RestService } from "../http-core/service.call";
 import { AxiosHttpClient } from "../http-client/axios.service.client";

@@ -5,13 +5,13 @@
 import { NavLink, useLocation } from 'react-router-dom'
 import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
-import { type ChangeEvent, type FormEvent, useEffect, useMemo, useState } from 'react'
+import { type ChangeEvent, type FormEvent, useMemo, useState } from 'react'
 import { SubmitButton } from '../submit/SubmitButton'
 import { useAppStore } from '../../stores/useAppStore'
 import ErrorMessage from '../error/ErrorMessage'
 import Notification from "../notif/Notification"
-import { UserLogged } from '../pages/auth/models'
 import { useQueryClient } from '@tanstack/react-query'
+import type { UserLogged } from '../../features/auth/types/auth'
 
 type NavBarProps = {
     user: UserLogged
@@ -25,14 +25,9 @@ function NavBar({ user }: NavBarProps) {
         return classes.filter(Boolean).join(' ')
     }
 
-    const fetchCategories = useAppStore((state) => state.fetchCategories)
     const categories = useAppStore((state) => state.categories)
     const searchRecipes = useAppStore((state) => state.searchRecipes)
     const showNotification = useAppStore((state) => state.showNotification);
-
-    useEffect(() => {
-        //fetchCategories()
-    }, [])
 
     const [searchFilters, setSearchFilters] = useState({
         ingredient: '',
@@ -203,7 +198,7 @@ function NavBar({ user }: NavBarProps) {
                             <option>Selecciona</option>
                             {
                                 categories &&
-                                categories.drinks.map((elem) =>
+                                categories.drinks.map((elem: any) =>
                                     <option key={elem.strCategory}
                                         value={elem.strCategory}>
                                         {elem.strCategory}

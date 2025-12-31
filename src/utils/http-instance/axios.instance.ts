@@ -1,7 +1,7 @@
-import axios, { AxiosError, InternalAxiosRequestConfig } from "axios";
-import { _urlApiBase } from "../http-core/service.const.ts";
+import axios, { AxiosError, type InternalAxiosRequestConfig } from "axios";
 import { getTokenFromStorage, setStorageToken } from "../token-storage/token.store.ts";
-import { refreshToken } from '../../services/authServices.ts';
+import { _urlApiBase } from "@/config/constants.ts";
+import { refreshToken } from "@/features/auth/api/tokenService.ts";
 
 let isRefreshing = false;
 let pendingRequests: Array<(token: string) => void> = [];

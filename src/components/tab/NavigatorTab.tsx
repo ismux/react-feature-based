@@ -1,4 +1,4 @@
-import { JSX, useState } from "react";
+import { type JSX, useState } from "react";
 
 interface NavigatorTabProps {
     tabs: [string, string, JSX.Element][]
