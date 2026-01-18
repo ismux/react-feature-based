@@ -1,73 +1,66 @@
-# React + TypeScript + Vite
+# react-feature-based Architecture for React (Experimental)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This repository is an **experimental pilot project** exploring a **feature-oriented architecture** for frontend applications built with React, TypeScript, and Vite.
 
-Currently, two official plugins are available:
+The goal of this project is to evaluate how organizing code by **features instead of technical layers** impacts scalability, maintainability, and team collaboration.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## ⚠️ Disclaimer
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+This is a **personal, independent project**, created for learning and experimentation purposes.
 
-## Expanding the ESLint configuration
+- It is **not affiliated with any company or organization**
+- It is **not production-ready**
+- It does **not represent a definitive architectural recommendation**
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+The patterns shown here reflect one possible approach and should be adapted to the needs of each project and team.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+---
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## 🎯 Goals
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+- Explore a feature-based folder structure
+- Improve separation of concerns at the feature level
+- Reduce cross-feature coupling
+- Encourage clear ownership boundaries
+- Serve as a reference and discussion starter
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+This repository focuses on **architecture and structure**, not on UI design or business logic completeness.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+---
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## 🧱 Architectural approach
+
+Instead of organizing code by technical layers (e.g. `components`, `services`, `hooks`), this project groups code by **features (or domains)**.
+
+Each feature encapsulates:
+- UI components
+- Hooks
+- Types
+- API logic
+- Tests
+
+Example structure:
+
+```txt
+src/
+├── app/              # Application setup (routing, providers)
+├── features/
+│   ├── auth/
+│   │   ├── components/
+│   │   ├── hooks/
+│   │   ├── api/
+│   │   ├── types.ts
+│   │   └── index.ts
+│   │
+│   ├── dashboard/
+│   └── profile/
+│
+├── shared/           # Shared, feature-agnostic code
+│   ├── components/
+│   ├── hooks/
+│   ├── utils/
+│   └── types/
+│
+└── main.tsx
